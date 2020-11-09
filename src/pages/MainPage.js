@@ -29,7 +29,8 @@ class MainPage extends React.Component{
         "thumbnail": "http4"
       }
     ]
-    }
+    };
+
   }
 
   cardAdapter(item) {
@@ -42,13 +43,12 @@ class MainPage extends React.Component{
   }
 
   render() {
-    const { data } = this.state;
-
+    const newsData = this.state.data;
 
     return(
       <View style={MainStyle.container}>
         <FlatList
-          data={ data }
+          data={ newsData }
           keyExtractor={(item) => (item.key)}
           renderItem={ this.cardAdapter } />
       </View>

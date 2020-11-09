@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import MainStyles from '../stylesheet/MainStyles';
 import MainStyle from '../stylesheet/MainStyles';
 
 
@@ -9,10 +8,14 @@ class NewsHolder extends React.Component{
     super(props);
 
     this.state={
-      judul: this.props.judul,
-      thumbnail: this.props.thumbnail
+      judul: '',
+      thumbnail: ''
     }
   }
+
+  // componentDidMount() {
+  //   this.setState({ judul: this.props.judul, thumbnail: this.props.thumbnail})
+  // }
   
   render() {
     return(

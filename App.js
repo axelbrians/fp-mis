@@ -1,11 +1,11 @@
 import React from 'react';
+import { Button, StatusBar } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
 import MainPage from './src/pages/MainPage';
-import { StatusBar } from 'expo-status-bar';
 
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +23,7 @@ const MyTheme = {
   },
 };
 
+
 function Home() {
   return (
     <Tab.Navigator>
@@ -35,9 +36,21 @@ function Home() {
 export default function App() {
   return (
     <NavigationContainer theme={ DarkTheme }>
-      <StatusBar />
+      <StatusBar
+        barStyle = "light-content"
+        // dark-content, light-content and default
+        hidden = {false}
+        //To hide statusBar
+        backgroundColor = "#000000"
+        //Background color of statusBar only works for Android
+        translucent = {false}
+        //allowing light, but not detailed shapes
+        networkActivityIndicatorVisible = {true} />
+
       <Stack.Navigator>
-        <Stack.Screen name="Main Page" component={MainPage} />
+        <Stack.Screen
+          name="Main Page"
+          component={MainPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
