@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image, Linking } from 'react-native';
 import CardStyle from '../stylesheet/CardStyle';
 
 
@@ -16,6 +16,7 @@ class NewsHolder extends React.Component{
     }
   }
 
+  // initiate state
   componentDidMount() {
     this.setState({ 
       judul: this.props.judul,
@@ -25,10 +26,17 @@ class NewsHolder extends React.Component{
       waktu: this.props.waktu
     })
   }
+
+  // open external link when card is clicked
+  handleCardClick = () => {
+    Linking.openURL(this.state.link).catch(() => alert('An error occurred when opening this link'));
+  }
   
   render() {
     return(
-      <TouchableOpacity style={ CardStyle.newsCard }>
+      <TouchableOpacity
+        style={ CardStyle.newsCard }
+        onPress={ this.handleCardClick }  >
         <View style={ CardStyle.newsHeader }>
 
           <View style={ CardStyle.leftSide }>
