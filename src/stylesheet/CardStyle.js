@@ -4,7 +4,6 @@ const CardStyle = StyleSheet.create({
   newsCard: {
     elevation: 2,
     borderRadius: 5,
-    borderWidth: 3,
     paddingHorizontal: 5,
     paddingVertical: 8,
     marginHorizontal: 10,
@@ -23,7 +22,8 @@ const CardStyle = StyleSheet.create({
     flex: 3
   },
   rightSide: {
-    flex: 1
+    flex: 1,
+    marginLeft: 5
   },
   cardTitle: {
     color: '#fff',

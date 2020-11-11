@@ -73,3 +73,12 @@ export default NewsHolder;
 //     "thumbnail": "http4"
 //   }
 // ],
+
+// "data": [
+//   {
+//       "judul": "Tuntas Jalani Vonis 'Bau Ikan Asin', Rey Utami Keluar Rutan",
+//       "link": "https://www.cnnindonesia.com/nasional/20201111194304-12-568734/tuntas-jalani-vonis-bau-ikan-asin-rey-utami-keluar-rutan",
+//       "poster": "https://akcdn.detik.net.id/visual/2019/12/09/a83381ed-c954-4e37-8d4c-6692199334ce_169.jpeg?w=140&q=90",
+//       "tipe": "Nasional",
+//       "waktu": "18 menit yang lalu"
+//   },
