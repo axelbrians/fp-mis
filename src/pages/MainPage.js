@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, FlatList } from 'react-native';
+import { Text, View, StyleSheet, FlatList, TouchableOpacity, Image} from 'react-native';
 import MainStyle from '../stylesheet/MainStyle';
 
 
@@ -11,8 +11,11 @@ class MainPage extends React.Component{
   constructor(props){
     super(props);
 
+    
+
     this.state = {
-      dataRequest: {}
+      dataRequest: {},
+      
     };
 
   }
@@ -21,6 +24,7 @@ class MainPage extends React.Component{
     this.getNewsFromApi()
   }
 
+  // fetch all data
   getNewsFromApi() {
     fetch(URL)
         .then((response) => response.json())
@@ -34,6 +38,8 @@ class MainPage extends React.Component{
     return index.toString();
   }
 
+
+  // rendering each item from request
   renderItem = ({ item }) => {
     return(
       <NewsHolder
@@ -45,6 +51,7 @@ class MainPage extends React.Component{
     )
   }
 
+
   render() {
     const newsData = this.state.dataRequest.data;
 
@@ -54,6 +61,15 @@ class MainPage extends React.Component{
           data={ newsData }
           keyExtractor={ this.keyExtractor }
           renderItem={ this.renderItem } />
+        <TouchableOpacity
+          style={ MainStyle.floatingBtn }>
+          <Image 
+            style={ MainStyle.floatingImg }
+            source={{
+              uri:
+                'https://raw.githubusercontent.com/AboutReact/sampleresource/master/plus_icon.png',
+            }} />
+        </TouchableOpacity>
       </View>
     );
   }
