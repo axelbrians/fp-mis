@@ -16,7 +16,8 @@ const MainStyles = StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 5,
     flexDirection: "row",
-    alignSelf: "baseline"
+    alignSelf: "baseline",
+    flex: 1
   },
   newsContent: {
     backgroundColor: '#232323'

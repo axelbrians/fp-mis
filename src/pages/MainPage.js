@@ -5,6 +5,8 @@ import MainStyle from '../stylesheet/MainStyles';
 
 import NewsHolder from '../components/NewsHolder';
 
+const URL = 'https://www.news.developeridn.com/';
+
 class MainPage extends React.Component{
   constructor(props){
     super(props);
@@ -33,24 +35,25 @@ class MainPage extends React.Component{
 
   }
 
-  cardAdapter(item) {
+  keyExtractor = (item, index) => index.toString();
+
+  renderItem = ({ item }) => {
     return(
-    <NewsHolder
-      judul={ item.judul }
-      thumbnail={ item.thumbnail }
-      key={ item.key } />
+      <NewsHolder
+        judul={ item.judul }
+        thumbnail={ item.thumbnail }
+        key={ item.key } />
     )
   }
 
   render() {
-    const newsData = this.state.data;
 
     return(
-      <View style={MainStyle.container}>
+      <View style={ MainStyle.container }>
         <FlatList
-          data={ newsData }
-          keyExtractor={(item) => (item.key)}
-          renderItem={ this.cardAdapter } />
+          data={ this.state.data }
+          keyExtractor={ this.keyExtractor }
+          renderItem={ this.renderItem } />
       </View>
     );
   }

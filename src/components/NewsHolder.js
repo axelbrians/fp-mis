@@ -13,15 +13,15 @@ class NewsHolder extends React.Component{
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({ judul: this.props.judul, thumbnail: this.props.thumbnail})
-  // }
+  componentDidMount() {
+    this.setState({ judul: this.props.judul, thumbnail: this.props.thumbnail})
+  }
   
   render() {
     return(
       <TouchableOpacity style={ MainStyle.newsCard }>
         <View style= { MainStyle.newsContent }>
-          <Text style={ MainStyle.newsTitle }>Placeholder</Text>
+        <Text style={ MainStyle.newsTitle }>{this.state.judul}</Text>
         </View>
       </TouchableOpacity>
     );
