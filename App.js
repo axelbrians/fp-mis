@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import CnnPage from './src/pages/CnnPage';
 import NytPage from './src/pages/NytPage';
+import TheGuardian from './src/pages/TheGuardian';
 
 
 const Tab = createBottomTabNavigator();
@@ -82,6 +83,9 @@ export default function App() {
         <Tab.Screen
           name="New York Times"
           component={NytPage} />
+        <Tab.Screen
+          name="The Guardian"
+          component={TheGuardian} />
       </Tab.Navigator>
     </NavigationContainer>
   );
