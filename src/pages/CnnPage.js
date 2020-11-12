@@ -20,7 +20,11 @@ class CnnPage extends React.Component{
     super(props);
 
     this.scrollY = new Animated.Value(0);
-    // this.scrollY.interpolate()
+    this.diffClamp = Animated.diffClamp(this.scrollY, 0, 50);
+    this.translateY = this.diffClamp.interpolate({
+      inputRange: [0, 50],
+      outputRange: [0, -50]
+    });
 
     this.state = {
       dataRequest: {},
@@ -65,13 +69,22 @@ class CnnPage extends React.Component{
 
     return(
       <View style={ MainStyle.container }>
+        <Animated.View 
+          style={{ 
+            transform: [
+              { translateY: this.translateY }
+            ], elevation: 3
+           }}>
         <CustomHeader />
+        </Animated.View>
+        
         <FlatList
           data={ newsData }
           keyExtractor={ this.keyExtractor }
           renderItem={ this.renderItem }
           onScroll={(e) => { 
-            this.scrollY.setValue(e.nativeEvent.contentOffset.y) }} />
+            this.scrollY.setValue(e.nativeEvent.contentOffset.y) }}
+          style={{ paddingTop: 50 }} />
         <TouchableOpacity
           style={ MainStyle.floatingBtn }>
           <Image 
