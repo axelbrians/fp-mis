@@ -70,14 +70,21 @@ class NytPage extends React.Component{
 
     return(
       <View style={ MainStyle.container }>
+        <Animated.View 
+          style={{ 
+            transform: [
+              { translateY: this.translateY }
+            ], elevation: 3
+           }}>
         <CustomHeader />
+        </Animated.View>
         <FlatList
           data={ newsData }
           keyExtractor={ this.keyExtractor }
           renderItem={ this.renderItem }
           onScroll={(e) => { 
             this.scrollY.setValue(e.nativeEvent.contentOffset.y) }}
-          style={{  paddingTop: 50  }} />
+          style={{ paddingTop: 50 }} />
         <TouchableOpacity
           style={ MainStyle.floatingBtn }>
           <Image 
