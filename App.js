@@ -5,7 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import MainPage from './src/pages/MainPage';
+import CnnPage from './src/pages/CnnPage';
+import NytPage from './src/pages/NytPage';
 
 
 const Tab = createBottomTabNavigator();
@@ -27,7 +28,12 @@ const MyTheme = {
 function Home() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="MainPage" component={MainPage} />
+      <Tab.Screen
+        name="CNN"
+        component={MainPage} />
+      <Tab.Screen
+        name="New York Times"
+        component={NytPage} />
     </Tab.Navigator>
   );
 }
@@ -47,11 +53,14 @@ export default function App() {
         //allowing light, but not detailed shapes
         networkActivityIndicatorVisible = {true} />
 
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Main Page"
-          component={MainPage} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen
+          name="CNN"
+          component={CnnPage} />
+        <Tab.Screen
+          name="New York Times"
+          component={NytPage} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

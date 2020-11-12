@@ -5,9 +5,9 @@ import MainStyle from '../stylesheet/MainStyle';
 
 import NewsHolder from '../components/NewsHolder';
 
-const URL = 'https://www.news.developeridn.com/';
+const URL = '';
 
-class MainPage extends React.Component{
+class NytPage extends React.Component{
   constructor(props){
     super(props);
 
@@ -77,4 +77,4 @@ class MainPage extends React.Component{
 
 
 
-export default MainPage;
+export default NytPage;
