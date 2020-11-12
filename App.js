@@ -30,7 +30,7 @@ function Home() {
     <Tab.Navigator>
       <Tab.Screen
         name="CNN"
-        component={MainPage} />
+        component={CnnPage} />
       <Tab.Screen
         name="New York Times"
         component={NytPage} />
@@ -52,6 +52,18 @@ export default function App() {
         translucent = {false}
         //allowing light, but not detailed shapes
         networkActivityIndicatorVisible = {true} />
+
+      {/* <Stack.Navigator>
+        <Stack.Screen
+          name="empty"
+          component={Home} />
+        <Stack.Screen
+          name="CNN"
+          component={CnnPage} />
+        <Stack.Screen
+          name="New York Times"
+          component={NytPage} />
+      </Stack.Navigator> */}
 
       <Tab.Navigator>
         <Tab.Screen

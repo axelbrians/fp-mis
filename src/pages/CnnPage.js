@@ -1,9 +1,17 @@
 import React from 'react';
-import { Text, View, StyleSheet, FlatList, TouchableOpacity, Image} from 'react-native';
+import { 
+  Text, 
+  View, 
+  StyleSheet, 
+  FlatList, 
+  TouchableOpacity, 
+  Image,
+  Animated } from 'react-native';
 import MainStyle from '../stylesheet/MainStyle';
 
 
 import NewsHolder from '../components/NewsHolder';
+import CustomHeader from '../components/CustomHeader';
 
 const URL = 'https://www.news.developeridn.com/';
 
@@ -11,11 +19,11 @@ class CnnPage extends React.Component{
   constructor(props){
     super(props);
 
-    
+    this.scrollY = new Animated.Value(0);
+    // this.scrollY.interpolate()
 
     this.state = {
       dataRequest: {},
-      
     };
 
   }
@@ -31,7 +39,7 @@ class CnnPage extends React.Component{
         .then((json) => this.setState(
           { dataRequest: json }
         ))
-        .catch((error) => console.log(error));
+        .catch((error) => alert(error));
 }
 
   keyExtractor(item, index) {
@@ -45,7 +53,7 @@ class CnnPage extends React.Component{
       <NewsHolder
         judul={ item.judul }
         link={ item.link }
-        kategori={ item.kategori }
+        kategori={ item.tipe }
         image={ item.poster }
         waktu={ item.waktu } />
     )
@@ -57,10 +65,13 @@ class CnnPage extends React.Component{
 
     return(
       <View style={ MainStyle.container }>
+        <CustomHeader />
         <FlatList
           data={ newsData }
           keyExtractor={ this.keyExtractor }
-          renderItem={ this.renderItem } />
+          renderItem={ this.renderItem }
+          onScroll={(e) => { 
+            this.scrollY.setValue(e.nativeEvent.contentOffset.y) }} />
         <TouchableOpacity
           style={ MainStyle.floatingBtn }>
           <Image 

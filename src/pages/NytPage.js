@@ -5,7 +5,7 @@ import MainStyle from '../stylesheet/MainStyle';
 
 import NewsHolder from '../components/NewsHolder';
 
-const URL = '';
+const URL = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=xMsKlFfPGS15O9vpFJqqm8hbDomgaEk5';
 
 class NytPage extends React.Component{
   constructor(props){
@@ -42,18 +42,18 @@ class NytPage extends React.Component{
   // rendering each item from request
   renderItem = ({ item }) => {
     return(
-      <NewsHolder
-        judul={ item.judul }
-        link={ item.link }
-        kategori={ item.kategori }
-        image={ item.poster }
-        waktu={ item.waktu } />
+      <NewsHolder 
+        judul={ item.title }
+        link={ item.url }
+        kategori={ item.section }
+        image={ item.thumbnail_standard }
+        waktu={ item.updated_date } />
     )
   }
 
 
   render() {
-    const newsData = this.state.dataRequest.data;
+    const newsData = this.state.dataRequest.results;
 
     return(
       <View style={ MainStyle.container }>
