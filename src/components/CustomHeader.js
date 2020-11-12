@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 import HeaderStyle from '../stylesheet/HeaderStyle';
 
@@ -10,6 +10,10 @@ class CustomHeader extends React.Component{
 
   }
 
+  handleTheme() {
+    
+  }
+
   render() {
     return(
       <View style={ HeaderStyle.container }>
@@ -17,9 +21,13 @@ class CustomHeader extends React.Component{
           <Text style={ HeaderStyle.title }>Ini di header</Text>
         </View>
 
-        <View style={ HeaderStyle.right }>
-          <Text style={ HeaderStyle.title }>h3h3</Text>
-        </View>
+        <TouchableOpacity
+          style={ HeaderStyle.right }
+          onPress={ this.handleTheme } >
+          <Image
+            source={ require('../icon/dark-1.png') }
+            style={ HeaderStyle.icon } />
+        </TouchableOpacity>
       </View>
     );
   }

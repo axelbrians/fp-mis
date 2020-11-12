@@ -23,6 +23,9 @@ const HeaderStyle = StyleSheet.create({
     fontSize: 18
   },
   right: {
+    
+  },
+  icon: {
 
   }
 });

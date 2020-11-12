@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const CardStyle = StyleSheet.create({
   newsCard: {
-    elevation: 4,
+    elevation: 2,
     borderRadius: 5,
     paddingHorizontal: 5,
     paddingVertical: 8,

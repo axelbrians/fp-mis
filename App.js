@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, StatusBar } from 'react-native';
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -11,6 +11,7 @@ import NytPage from './src/pages/NytPage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
 
 const MyTheme = {
   dark: true,
@@ -23,7 +24,6 @@ const MyTheme = {
     notification: 'rgb(255, 69, 58)',
   },
 };
-
 
 function Home() {
   return (
@@ -65,7 +65,17 @@ export default function App() {
           component={NytPage} />
       </Stack.Navigator> */}
 
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: '#e91e63',
+          labelStyle: {
+            fontSize: 16
+          },
+          tabStyle: {
+            alignItems: 'center',
+            justifyContent: 'center'
+          }
+        }} >
         <Tab.Screen
           name="CNN"
           component={CnnPage} />
