@@ -8,12 +8,12 @@ const CardStyle = StyleSheet.create({
     paddingVertical: 8,
     marginHorizontal: 10,
     marginVertical: 5,
-    flexDirection: "column",
+    flexDirection: 'column',
     backgroundColor: '#232323',
     flex: 1
   },
   newsHeader: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingLeft: 10,
     paddingVertical: 5,
     justifyContent: "flex-end"

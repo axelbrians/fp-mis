@@ -31,19 +31,6 @@ class NewsHolder extends React.Component{
   handleCardClick = () => {
     Linking.openURL(this.state.link).catch(() => alert('An error occurred when opening this link'));
   }
-
-  handleImgRender() {
-    if(this.state.image){
-      return( <Image 
-        source={{ uri: this.state.image }}
-        style={ CardStyle.thumbnail } /> );
-    }else {
-      return( <Image 
-        source={{ uri: 'https://img.favpng.com/15/5/0/computer-icons-error-message-icon-design-clip-art-png-favpng-mLtz3JxSFCnjgm4Dnc0dJPDhY.jpg' }}
-        style={ CardStyle.thumbnail } /> );
-    }
-    
-  }
   
   render() {
     return(
@@ -58,7 +45,7 @@ class NewsHolder extends React.Component{
 
           <View style={CardStyle.rightSide}>
             <Image 
-              source={{ uri: this.state.image ? this.state.image : 'https://img.favpng.com/15/5/0/computer-icons-error-message-icon-design-clip-art-png-favpng-mLtz3JxSFCnjgm4Dnc0dJPDhY.jpg' }}
+              source={{ uri: this.state.image ? this.state.image : 'https://banner2.cleanpng.com/20180331/bjw/kisspng-exclamation-mark-symbol-computer-icons-circle-warn-exclamation-mark-5abfc772d257d5.9428334815225178748616.jpg' }}
               style={ CardStyle.thumbnail } />
           </View>
         </View>
