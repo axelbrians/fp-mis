@@ -45,7 +45,7 @@ class BloombergPage extends React.Component{
           { dataRequest: json.modules[0] }
         ))
         .catch((error) => alert(error));
-}
+  }
 
   keyExtractor(item, index) {
     return index.toString();
@@ -86,7 +86,7 @@ class BloombergPage extends React.Component{
           renderItem={ this.renderItem }
           onScroll={(e) => { 
             this.scrollY.setValue(e.nativeEvent.contentOffset.y) }}
-          style={{ paddingTop: 50 }} />
+          style={{ paddingTop: 55 }} />
 
         <TouchableOpacity
           style={ MainStyle.floatingBtn }>
