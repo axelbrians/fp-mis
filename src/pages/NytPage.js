@@ -7,6 +7,7 @@ import {
   TouchableOpacity, 
   Image, 
   Animated } from 'react-native';
+import { useScrollToTop } from '@react-navigation/native';
 import MainStyle from '../stylesheet/MainStyle';
 
 
@@ -80,26 +81,24 @@ class NytPage extends React.Component{
           title="New York Times" />
         </Animated.View>
         <FlatList
+          ref={ this.props.scrollRef }
           data={ newsData }
           keyExtractor={ this.keyExtractor }
           renderItem={ this.renderItem }
           onScroll={(e) => { 
             this.scrollY.setValue(e.nativeEvent.contentOffset.y) }}
-          style={{ paddingTop: 55 }} />
-        <TouchableOpacity
-          style={ MainStyle.floatingBtn }>
-          <Image 
-            style={ MainStyle.floatingImg }
-            source={{
-              uri:
-                'https://raw.githubusercontent.com/AboutReact/sampleresource/master/plus_icon.png',
-            }} />
-        </TouchableOpacity>
+          style={{ paddingTop: 55 }}
+          ListFooterComponent={ <View style={{ marginBottom: 55 }} /> } />
+          
       </View>
     );
   }
 }
 
+export default function() {
+  const ref = React.useRef(null);
 
+  useScrollToTop(ref);
 
-export default NytPage;
+  return (<NytPage scrollRef={ref} />);
+};

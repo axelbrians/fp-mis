@@ -8,6 +8,7 @@ const MainStyle = StyleSheet.create({
     backgroundColor: '#111111',
     alignItems: 'stretch',
     justifyContent: 'flex-start',
+    // paddingBottom: 50
   },
   floatingBtn: {
     position: 'absolute',

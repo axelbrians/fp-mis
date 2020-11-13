@@ -16,17 +16,11 @@ const HeaderStyle = StyleSheet.create({
     height: 50
   },
   left: {
-
+    paddingLeft: 7
   },
   title: {
     color: '#fff',
     fontSize: 18
-  },
-  right: {
-    
-  },
-  icon: {
-
   }
 });
 

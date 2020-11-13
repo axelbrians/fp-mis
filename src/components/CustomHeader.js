@@ -4,30 +4,16 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import HeaderStyle from '../stylesheet/HeaderStyle';
 
 class CustomHeader extends React.Component{
-  constructor() {
-    super();
-
-
-  }
-
-  handleTheme() {
-    
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return(
       <View style={ HeaderStyle.container }>
         <View style={ HeaderStyle.left }>
-      
+        <Text style={ HeaderStyle.title }>{ this.props.title }</Text>
         </View>
-
-        <TouchableOpacity
-          style={ HeaderStyle.right }
-          onPress={ this.handleTheme } >
-          <Image
-            source={ require('../icon/dark-1.png') }
-            style={ HeaderStyle.icon } />
-        </TouchableOpacity>
       </View>
     );
   }
