@@ -8,7 +8,7 @@ const HeaderStyle = StyleSheet.create({
     left: 0,
     right: 0,
     flexDirection: 'row',
-    backgroundColor: '#555',
+    backgroundColor: '#212121',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: 15,

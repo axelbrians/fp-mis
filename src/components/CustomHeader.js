@@ -18,7 +18,7 @@ class CustomHeader extends React.Component{
     return(
       <View style={ HeaderStyle.container }>
         <View style={ HeaderStyle.left }>
-          <Text style={ HeaderStyle.title }>Ini di header</Text>
+    <Text style={ HeaderStyle.title }>{ this.props.title }</Text>
         </View>
 
         <TouchableOpacity

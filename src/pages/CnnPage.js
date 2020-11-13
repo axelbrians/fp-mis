@@ -75,7 +75,8 @@ class CnnPage extends React.Component{
               { translateY: this.translateY }
             ], elevation: 3
            }}>
-        <CustomHeader />
+        <CustomHeader
+          title="CNN" />
         </Animated.View>
         
         <FlatList
@@ -84,7 +85,7 @@ class CnnPage extends React.Component{
           renderItem={ this.renderItem }
           onScroll={(e) => { 
             this.scrollY.setValue(e.nativeEvent.contentOffset.y) }}
-          style={{ paddingTop: 50 }} />
+          style={{ paddingTop: 55 }} />
         <TouchableOpacity
           style={ MainStyle.floatingBtn }>
           <Image 

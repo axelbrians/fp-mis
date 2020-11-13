@@ -16,7 +16,7 @@ import CustomHeader from '../components/CustomHeader';
 
 const URL = 'https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=latest&rapidapi-key=4835674456msh0879339e85d3316p110892jsn2bc8b68c2706&rapidapi-host=bloomberg-market-and-financial-news.p.rapidapi.com';
 
-class TheGuardian extends React.Component{
+class BloombergPage extends React.Component{
   constructor(props){
     super(props);
 
@@ -58,8 +58,9 @@ class TheGuardian extends React.Component{
       <NewsHolder 
         judul={ item.title }
         link={ item.longURL }
-        kategori={ item.franchise}
-        image={ item.thumbnailImage } />
+        kategori={ item.franchise }
+        image={ item.thumbnailImage }
+        waktu={ item.id.substring(0, 10) } />
     )
   }
 
@@ -75,7 +76,8 @@ class TheGuardian extends React.Component{
               { translateY: this.translateY }
             ], elevation: 3
            }}>
-        <CustomHeader />
+        <CustomHeader
+          title="Bloomberg" />
         </Animated.View>
 
         <FlatList
@@ -102,6 +104,6 @@ class TheGuardian extends React.Component{
 
 
 
-export default TheGuardian;
+export default BloombergPage;
 
 

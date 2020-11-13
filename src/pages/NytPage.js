@@ -76,7 +76,8 @@ class NytPage extends React.Component{
               { translateY: this.translateY }
             ], elevation: 3
            }}>
-        <CustomHeader />
+        <CustomHeader
+          title="New York Times" />
         </Animated.View>
         <FlatList
           data={ newsData }

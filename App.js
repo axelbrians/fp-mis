@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import CnnPage from './src/pages/CnnPage';
 import NytPage from './src/pages/NytPage';
-import TheGuardian from './src/pages/TheGuardian';
+import BloombergPage from './src/pages/BloombergPage';
 
 
 const Tab = createBottomTabNavigator();
@@ -68,7 +68,7 @@ export default function App() {
 
       <Tab.Navigator
         tabBarOptions={{
-          activeTintColor: '#e91e63',
+          activeTintColor: '#fff',
           labelStyle: {
             fontSize: 16
           },
@@ -84,8 +84,8 @@ export default function App() {
           name="New York Times"
           component={NytPage} />
         <Tab.Screen
-          name="The Guardian"
-          component={TheGuardian} />
+          name="Bloomberg"
+          component={BloombergPage} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -7,10 +7,12 @@ const CardStyle = StyleSheet.create({
     paddingHorizontal: 5,
     paddingVertical: 8,
     marginHorizontal: 10,
-    marginVertical: 5,
+    marginVertical: 7,
     flexDirection: 'column',
-    backgroundColor: '#232323',
-    flex: 1
+    backgroundColor: '#111111',
+    flex: 1,
+    borderColor: '#808080',
+    borderWidth: 0.5
   },
   newsHeader: {
     flexDirection: 'row',
