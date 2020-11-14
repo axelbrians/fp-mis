@@ -7,29 +7,11 @@ class NewsHolder extends React.Component{
   constructor(props) {
     super(props);
 
-    this.state={
-      judul: '',
-      kategori: '',
-      image: this.props.image,
-      link: '',
-      waktu: ''
-    }
-  }
-
-  // initiate state
-  componentDidMount() {
-    this.setState({ 
-      judul: this.props.judul,
-      kategori: this.props.kategori,
-      image: this.props.image,
-      link: this.props.link,
-      waktu: this.props.waktu
-    })
   }
 
   // open external link when card is clicked
   handleCardClick = () => {
-    Linking.openURL(this.state.link).catch(() => alert('An error occurred when opening this link'));
+    Linking.openURL(this.props.link).catch((error) => alert('An error occurred when opening this link'));
   }
   
   render() {
@@ -40,12 +22,12 @@ class NewsHolder extends React.Component{
         <View style={ CardStyle.newsHeader }>
 
           <View style={ CardStyle.leftSide }>
-          <Text style={ CardStyle.cardTitle }>{this.state.judul}</Text>
+          <Text style={ CardStyle.cardTitle }>{this.props.judul}</Text>
           </View>
 
           <View style={CardStyle.rightSide}>
             <Image 
-              source={{ uri: this.state.image ? this.state.image : 'https://banner2.cleanpng.com/20180331/bjw/kisspng-exclamation-mark-symbol-computer-icons-circle-warn-exclamation-mark-5abfc772d257d5.9428334815225178748616.jpg' }}
+              source={{ uri: this.props.image ? this.props.image : 'https://banner2.cleanpng.com/20180331/bjw/kisspng-exclamation-mark-symbol-computer-icons-circle-warn-exclamation-mark-5abfc772d257d5.9428334815225178748616.jpg' }}
               style={ CardStyle.thumbnail } />
           </View>
         </View>
@@ -53,7 +35,7 @@ class NewsHolder extends React.Component{
         <View style={ CardStyle.content }>
           {/* <Text style={ CardStyle.contentText }>{this.state.image}</Text> */}
 
-          <Text style={ CardStyle.contentText }>{this.state.waktu}</Text>
+          <Text style={ CardStyle.contentText }>{this.props.waktu}</Text>
         </View>
       </TouchableOpacity>
     );

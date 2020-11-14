@@ -61,7 +61,7 @@ class BloombergPage extends React.Component{
         link={ item.longURL }
         kategori={ item.franchise }
         image={ item.thumbnailImage }
-        waktu={ item.id.substring(0, 10) } />
+        waktu={ item.id.slice(0, 10) } />
     )
   }
 

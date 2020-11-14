@@ -45,8 +45,8 @@ class NytPage extends React.Component{
         .then((json) => this.setState(
           { dataRequest: json }
         ))
-        .catch((error) => console.log(error));
-}
+        .catch((error) => alert(error));
+  }
 
   keyExtractor(item, index) {
     return index.toString();
@@ -61,7 +61,7 @@ class NytPage extends React.Component{
         link={ item.url }
         kategori={ item.section }
         image={ item.thumbnail_standard }
-        waktu={ item.updated_date } />
+        waktu={ item.updated_date.slice(0, 10) } />
     )
   }
 
