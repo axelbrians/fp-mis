@@ -14,8 +14,8 @@ import MainStyle from '../stylesheet/MainStyle';
 import NewsHolder from '../components/NewsHolder';
 import CustomHeader from '../components/CustomHeader';
 
-
-const URL = 'https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=latest&rapidapi-key=4835674456msh0879339e85d3316p110892jsn2bc8b68c2706&rapidapi-host=bloomberg-market-and-financial-news.p.rapidapi.com';
+// dont forget to pass you api-key to this url
+const URL = 'https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=latest';
 
 class BloombergPage extends React.Component{
   constructor(props){

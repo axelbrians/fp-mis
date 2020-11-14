@@ -14,7 +14,8 @@ import MainStyle from '../stylesheet/MainStyle';
 import NewsHolder from '../components/NewsHolder';
 import CustomHeader from '../components/CustomHeader';
 
-const URL = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=xMsKlFfPGS15O9vpFJqqm8hbDomgaEk5';
+// dont forget to pass you api-key to this url
+const URL = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?';
 
 class NytPage extends React.Component{
   constructor(props){

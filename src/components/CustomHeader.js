@@ -14,6 +14,8 @@ class CustomHeader extends React.Component{
         <View style={ HeaderStyle.left }>
         <Text style={ HeaderStyle.title }>{ this.props.title }</Text>
         </View>
+
+        
       </View>
     );
   }

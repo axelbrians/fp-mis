@@ -44,7 +44,7 @@ class CnnPage extends React.Component{
           { dataRequest: json }
         ))
         .catch((error) => alert(error));
-}
+  }
 
   keyExtractor(item, index) {
     return index.toString();
