@@ -3,10 +3,10 @@ import { Text, View, TouchableOpacity, Image, Linking } from 'react-native';
 import CardStyle from '../stylesheet/CardStyle';
 
 
+
 class NewsHolder extends React.Component{
   constructor(props) {
     super(props);
-
   }
 
   // open external link when card is clicked
